@@ -71,14 +71,48 @@ function generateArrayCard(nomeArray, objectNumber){
     return card;
 }
 
-// Funzione che crea un ciclo che fa tutte le card da un Array
+// Funzione che cicla l'array e fa tutte le card
 
-function generateAllArrayCards(nomeArray, doveAppenderle) {
+function doSomethingFromArray(nomeArray, cosaFare, doveAppenderle) {
     for(i = 0; i < nomeArray.length; i++){
-        const card = generateArrayCard(nomeArray, i);
+        const card = cosaFare(nomeArray, i);
         doveAppenderle.append(card);
     }
-    console.log("Sei un figo")
 }
 
-generateAllArrayCards(team, container);
+doSomethingFromArray(team, generateArrayCard, container);
+
+//      BONUSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+// creo un modo per pushare nell'array nuovi oggetti
+function pushNewObject() {
+
+    // grab info
+    const nomeInput = document.getElementById("name");
+    const ruoloInput = document.getElementById("role");
+    const immagineInput = document.getElementById("image");
+
+    // make an object
+    const newObject = {};
+    newObject.nome = nomeInput.value;
+    newObject.immagine = immagineInput.value;
+    newObject.ruolo = ruoloInput.value;
+    console.log(newObject);
+
+    // push object
+    team.push(newObject);
+    console.log("dopo il push, team: ", team);
+}
+
+// funzione che aggiunge l'ultimo elemento (quello nuovo) dell'array
+function addTeamCard() {
+    let i = team.length - 1;
+    console.log(i)
+    const card = generateArrayCard(team, i);
+    container.append(card);
+}
+
+// prendo il bottone e gli do l'eventListeneter
+const addButton = document.getElementById("addMemberButton");
+addButton.addEventListener("click", pushNewObject);
+addButton.addEventListener("click", addTeamCard);
