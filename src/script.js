@@ -7,3 +7,43 @@
 // BONUS:
 // Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
 
+// definisco un array di oggetti
+ const team = [
+     {
+        nome: "Wayne Barnett", 
+        immagine: "img\wayne-barnett-founder-ceo.jpg",
+        ruolo: "Founder & CEO",
+        
+     },
+     {
+        nome: "Angela Caroll", 
+        immagine: "img\angela-caroll-chief-editor.jpg",
+        ruolo: "Chief Editor",
+        
+     },
+     {
+        nome: "Walter Gordon", 
+        immagine: "img\walter-gordon-office-manager.jpg",
+        ruolo: "Office Manager",
+        
+     },
+     {
+        nome: "Angela Lopez", 
+        immagine: "img\angela-lopez-social-media-manager.jpg",
+        ruolo: "Social Media Manager",
+        
+     },
+     {
+        nome: "Scott Estrada", 
+        immagine: "img\scott-estrada-developer.jpg",
+        ruolo: "Developer",
+        
+     },
+     {
+        nome: "Barbara Ramos", 
+        immagine: "img\barbara-ramos-graphic-designer.jpg",
+        ruolo: "Graphic Designer",
+        
+     }
+ ]
+ console.log(team)
