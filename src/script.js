@@ -88,9 +88,9 @@ doSomethingFromArray(team, generateArrayCard, container);
 function pushNewObject() {
 
     // grab info
-    const nomeInput = document.getElementById("name");
-    const ruoloInput = document.getElementById("role");
-    const immagineInput = document.getElementById("image");
+    let nomeInput = document.getElementById("name");
+    let ruoloInput = document.getElementById("role");
+    let immagineInput = document.getElementById("image");
 
     // make an object
     const newObject = {};
@@ -102,6 +102,11 @@ function pushNewObject() {
     // push object
     team.push(newObject);
     console.log("dopo il push, team: ", team);
+
+    // clean form
+    nomeInput.value = "";
+    ruoloInput.value = "";
+    immagineInput.value = "";
 }
 
 // funzione che aggiunge l'ultimo elemento (quello nuovo) dell'array
