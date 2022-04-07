@@ -50,28 +50,10 @@ console.log(team);
 
 const container = document.querySelector(".team-container");
 
-// creo template di una card
-// let card = document.createElement("div");
-// card.setAttribute("class", "team-card");
-// card.innerHTML = `
-//     <div class="card-image">
-//         <img
-//         src="${team[2].immagine}"
-//         alt="${team[2].nome}"
-//         />
-//     </div>
-//     <div class="card-text">
-//         <h3>${team[2].nome}</h3>
-//         <p>${team[2].ruolo}</p>
-//     </div>
-// `
-// console.log(card)
-
-
-// ne creo una funzione richiamabile
+// Creo una funzione richiamabile che genera un template da un array
 
 function generateArrayCard(nomeArray, objectNumber){
-    card = document.createElement("div");
+    const card = document.createElement("div");
     card.setAttribute("class", "team-card");
     card.innerHTML = `
         <div class="card-image">
@@ -88,3 +70,15 @@ function generateArrayCard(nomeArray, objectNumber){
     console.log(card)
     return card;
 }
+
+// Funzione che crea un ciclo che fa tutte le card da un Array
+
+function generateAllArrayCards(nomeArray, doveAppenderle) {
+    for(i = 0; i < nomeArray.length; i++){
+        const card = generateArrayCard(nomeArray, i);
+        doveAppenderle.append(card);
+    }
+    console.log("Sei un figo")
+}
+
+generateAllArrayCards(team, container);
