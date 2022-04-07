@@ -51,19 +51,40 @@ console.log(team);
 const container = document.querySelector(".team-container");
 
 // creo template di una card
-let card = document.createElement("div");
-card.setAttribute("class", "team-card");
-card.innerHTML = `
-    <div class="card-image">
-        <img
-        src="${team[2].immagine}"
-        alt="${team[2].nome}"
-        />
-    </div>
-    <div class="card-text">
-        <h3>${team[2].nome}</h3>
-        <p>${team[2].ruolo}</p>
-    </div>
-`
-console.log(card)
-container.append(card);
+// let card = document.createElement("div");
+// card.setAttribute("class", "team-card");
+// card.innerHTML = `
+//     <div class="card-image">
+//         <img
+//         src="${team[2].immagine}"
+//         alt="${team[2].nome}"
+//         />
+//     </div>
+//     <div class="card-text">
+//         <h3>${team[2].nome}</h3>
+//         <p>${team[2].ruolo}</p>
+//     </div>
+// `
+// console.log(card)
+
+
+// ne creo una funzione richiamabile
+
+function generateArrayCard(nomeArray, objectNumber){
+    card = document.createElement("div");
+    card.setAttribute("class", "team-card");
+    card.innerHTML = `
+        <div class="card-image">
+            <img
+            src="${nomeArray[objectNumber].immagine}"
+            alt="${nomeArray[objectNumber].nome}"
+            />
+        </div>
+        <div class="card-text">
+            <h3>${nomeArray[objectNumber].nome}</h3>
+            <p>${nomeArray[objectNumber].ruolo}</p>
+        </div>
+    `
+    console.log(card)
+    return card;
+}
